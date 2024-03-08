@@ -49,9 +49,8 @@ class Board:
         return False
 
     def save_result(self, result):
-        file = open('results.txt', 'a', encoding='utf-8')
-        file.write(f'{result} \n')
-        file.close()
+        with open('results.txt', 'a', encoding='utf-8') as f:
+            f.write(f'{result} \n')
 
     def __str__(self):
         return ('Объект игрового поля размером: '

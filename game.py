@@ -42,21 +42,19 @@ def main():
             else:
                 break
 
-        # Теперь для установки значения на поле само значение берётся
-        # из переменной current_player.
         game.make_move(row, column, current_player)
         game.display()
         if game.check_win(current_player):
-            game.save_result(f'Победили {current_player}!')
-            print(f'Победили {current_player}!')
+            result = f'Победили {current_player}.'
+            game.save_result(result)
+            print(result)
             running = False
         elif game.is_board_full():
-            game.save_result('Ничья!')
-            print('Ничья!')
+            result = ('Ничья!')
+            game.save_result(result)
+            print(result)
             running = False
-        # Тернарный оператор, через который реализована смена игроков.
-        # Если current_player равен X, то новым значением будет O,
-        # иначе — новым значением будет X.
+
         current_player = 'O' if current_player == 'X' else 'X'
 
 
