@@ -1,3 +1,6 @@
+"""Классы, которые обрабатывают ошибки"""
+
+
 class FieldIndexError(IndexError):
 
     def __str__(self):
